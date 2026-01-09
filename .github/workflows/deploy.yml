@@ -39,4 +39,5 @@ jobs:
         with:
           repoToken: '${{ secrets.FIREBASE_TOKEN }}'
           projectId: taskflow-cbcd3
+          firebaseServiceAccountKey: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
           channelId: live
