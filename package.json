@@ -30,7 +30,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "type-check": "tsc --noEmit",
-    "deploy": "npm run build && firebase deploy"
+    "deploy": "npm run build && vercel --prod",
+    "vercel-build": "vercel build",
+    "vercel-dev": "vercel dev"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
