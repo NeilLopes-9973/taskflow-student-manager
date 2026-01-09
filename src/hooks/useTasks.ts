@@ -15,6 +15,7 @@ import { db } from '@/integrations/firebase/client';
 import { useAuth } from '@/context/AuthContext';
 import { toast } from '@/hooks/use-toast';
 import { Task, TaskFilter } from '@/integrations/firebase/types';
+import { DocumentData } from 'firebase/firestore';
 
 export const useTasks = () => {
   const { user } = useAuth();
@@ -23,7 +24,7 @@ export const useTasks = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   // Convert Firestore document to Task
-  const convertDocToTask = (doc: any, docId: string): Task => ({
+  const convertDocToTask = (doc: DocumentData, docId: string): Task => ({
     id: docId,
     userId: doc.userId,
     title: doc.title,
